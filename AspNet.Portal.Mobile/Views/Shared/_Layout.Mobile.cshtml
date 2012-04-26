@@ -15,31 +15,31 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
         <link rel="stylesheet" href="~/Content/mobile.css" />
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"> </script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"> </script>
 
-        <script type="text/javascript" src="~/Scripts/knockout-2.0.0.js"></script>
-        <script type="text/javascript" src="~/Scripts/underscore.js"></script>
-        <script type="text/javascript" src="~/Scripts/App/CacheInit.js"></script>
+        <script type="text/javascript" src="~/Scripts/knockout-2.0.0.js"> </script>
+        <script type="text/javascript" src="~/Scripts/underscore.js"> </script>
+        <script type="text/javascript" src="~/Scripts/App/CacheInit.js"> </script>
 
-        <script type="text/javascript" src="~/Modes/Online.js"></script>
+        <script type="text/javascript" src="~/Modes/Online.js"> </script>
     </head> 
-<body> 
+    <body> 
 
-    <div class="page" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            @RenderSection("header", false)
-            <h1>@ViewBag.Title</h1>
+        <div class="page" data-role="page" data-theme="a">
+            <div data-role="header" data-position="fixed" class="ui-grid-a">            
+                @RenderSection("header", false)                                        
+                <h1>@ViewBag.Title</h1>
+            </div>
+
+            <div data-role="content">
+                @RenderSection("featured", false)
+                @RenderBody()		
+            </div>
+
         </div>
-
-        <div data-role="content">
-            @RenderSection("featured", false)
-            @RenderBody()		
-        </div>
-
-    </div>
     
-    @RenderSection(name: "Scripts", required: false)
+        @RenderSection(name: "Scripts", required: false)
 
-</body>
+    </body>
 </html>

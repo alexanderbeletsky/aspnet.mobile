@@ -1,12 +1,16 @@
 ﻿@{
     ViewBag.Title = "Article";
-    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";    
+    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
 }
 
 @section header {
-    <a href="/app" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Back</a>
-    <a href="@ViewBag.Url" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-inline="true">Original</a>
-    <a href="@ViewBag.TweetUrl" data-role="button">Tweet</a>
+    <div class="ui-block-a">
+        <a href="/app" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Back</a>
+    </div>
+    <div class="ui-block-b">
+        <a href="@ViewBag.TweetUrl" data-role="button">Share</a>
+        <a class="ui-btn-right" href="@ViewBag.Url" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-inline="true">Original</a>
+    </div>
 }
 
 <div class="readable">@Html.Raw(ViewBag.Content)</div>
@@ -23,5 +27,5 @@
             localStorage.setItem('cache', JSON.stringify(cache));
         }
     });
-        
+
 </script>
